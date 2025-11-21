@@ -183,7 +183,6 @@ footer{
     overflow: hidden;
 }
 
-/* Styling untuk header tabel */
 #tampilan thead {
     background-color: #5c3d2e;
 }
@@ -195,7 +194,7 @@ footer{
 
 #tampilan th {
     padding: 15px 20px;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     font-size: 16px;
     color: white;

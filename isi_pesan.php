@@ -33,7 +33,7 @@ $result = mysqli_query($mysql, $query);
    <table id="tampilan">
             <thead>
                 <tr class="atas">
-                    <th>ID</th>
+                    <th>No</th>
                     <th>Nama</th>
                     <th>Email</th>
                     <th>Nomor HP</th>
