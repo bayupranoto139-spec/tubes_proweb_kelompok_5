@@ -170,3 +170,107 @@ footer{
   gap: 10px;
   justify-content: flex-end;
 }
+/* Styling untuk tabel yang nyaman dilihat */
+#tampilan {
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Styling untuk header tabel */
+#tampilan thead {
+    background-color: #5c3d2e;
+}
+
+#tampilan .atas {
+    background-color: #5c3d2e;
+    color: white;
+}
+
+#tampilan th {
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border-bottom: 3px solid #8b5e3c;
+}
+
+/* Styling untuk body tabel */
+tbody {
+    text-align: center;
+}
+
+#tampilan .isi {
+    background: none;
+    transition: background-color 0.3s ease;
+}
+
+#tampilan .isi:hover {
+    background-color: rgba(139, 94, 60, 0.1);
+}
+
+#tampilan td {
+    padding: 12px 20px;
+    color: #333;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(139, 94, 60, 0.2);
+}
+
+/* Warna berbeda untuk baris ganjil-genap */
+#tampilan .isi:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#tampilan .isi:nth-child(odd) {
+    background-color: rgba(242, 235, 230, 0.5);
+}
+
+/* Hover effect yang lebih menarik */
+#tampilan .isi:hover {
+    background-color: rgba(139, 94, 60, 0.2);
+    transform: scale(1.01);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk kolom tertentu */
+#tampilan td:first-child {
+    font-weight: bold;
+    color: #5c3d2e;
+    text-align: center;
+    width: 50px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    #tampilan {
+        width: 95%;
+        font-size: 14px;
+    }
+    
+    #tampilan th,
+    #tampilan td {
+        padding: 10px 12px;
+    }
+    
+    /* Sembunyikan kolom ID di mobile */
+    #tampilan th:first-child,
+    #tampilan td:first-child {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Tabel scroll horizontal di layar kecil */
+    #tampilan {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
