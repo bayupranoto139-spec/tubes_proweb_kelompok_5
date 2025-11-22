@@ -13,7 +13,7 @@
     <h1>17 Coffee</h1>
     <p>Choose Your Favourite Menu!</p>
   </header>
-  
+
   <!--Navigasi-->
 
   <nav>
@@ -21,8 +21,8 @@
     <a href="drink.php">Drink</a>
     <a href="food.php">Food</a>
     <a href="contact.php">Contact</a>
- </nav>
- <h2 class="font">Pesan Minuman Favoritmu</h2>
+  </nav>
+  <h2 class="font">Pesan Minuman Favoritmu</h2>
 
   <!--Menu Minuman-->
 
@@ -75,7 +75,7 @@
       <h3>Kopi Karamel - Rp15.000</h3>
       <p>Espresso, susu UHT, dan gula karamel</p>
       <br>
-    
+
       <button>Pesan</button>
     </div>
 
@@ -94,19 +94,20 @@
   <section class="form-section">
     <h2>Form Pemesanan</h2>
     <form id="orderForm">
-           <input type="text" id="nama" placeholder="Nama Pemesan" required>
+      <input type="text" id="nama" placeholder="Nama Pemesan" required>
       <input type="text" id="alamat" placeholder="Alamat Pengiriman" required>
       <input type="text" id="nohp" placeholder="Nomor HP" required>
       <p>Total: Rp0</p>
       <button type="submit">Kirim Pesanan</button>
     </form>
-  </section>  
+  </section>
 
   <!--Footer-->
 
-    <footer class="font">
-      <p> © Copyright by kelompok 5 2025</p>
-    </footer>
+  <footer class="font">
+    <p> © Copyright by kelompok 5 2025</p>
+  </footer>
 
 </body>
+
 </html>
