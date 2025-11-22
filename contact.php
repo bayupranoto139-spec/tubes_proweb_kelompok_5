@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
     if (!$result) {
         echo "Error: " . mysqli_error($mysql);
     }else {
-        header ("Location: home.php");
+        header ("Location: isi_pesan.php");
     }
 }
 

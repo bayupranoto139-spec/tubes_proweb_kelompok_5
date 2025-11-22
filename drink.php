@@ -46,7 +46,7 @@
     </div>
 
     <div class="item">
-      <img src="foto/cappucino.jpeg" alt="Cappucino" class="coffee-img" />
+      <img src="foto/cappuccino.jpeg" alt="Cappucino" class="coffee-img" />
       <h3>Cappucino - Rp15.000</h3>
       <p>Espresso, susu, dan busa susu seimbang</p>
       <br>
