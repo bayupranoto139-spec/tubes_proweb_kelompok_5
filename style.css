@@ -323,3 +323,36 @@ tbody {
         white-space: nowrap;
     }
 }
+/* Notifikasi */
+.notification {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    animation: slideDown 0.5s ease-out;
+}
+
+.notification.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
+}
+
+.notification.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #dc3545;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
