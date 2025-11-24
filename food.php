@@ -1,6 +1,9 @@
 <?php
 include 'mysql.php';
 ?>
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -28,8 +31,26 @@ include 'mysql.php';
     <a href="drink.php">Drink</a>
     <a href="food.php">Food</a>
     <a href="contact.php">Contact</a>
+
   </nav>
   <h2 class="font">Pesan Makanan Favoritmu</h2>
+
+<!-- ICON CART -->
+<div class="cart-icon" id="cart-toggle">🛒</div>
+
+<!-- PANEL CART -->
+<div id="cart-panel">
+    
+    <span id="close-cart">✖</span>
+
+    <div id="cart-content">
+        <h2>Keranjang</h2>
+        <div id="cart-container">
+            Memuat...
+        </div>
+    </div>
+</div>
+
 
   <!--Menu Makanan-->
 
@@ -49,6 +70,7 @@ include 'mysql.php';
       echo "<button class='order' data-id='" . $row['menu_id'] . "'>Pesan</button>";
       echo "<div class='btn'>";
       echo "<button class='plus' data-id='" . $row['menu_id'] . "'>+</button>";
+      echo '<span id="qty-' . $row['menu_id'] . '">0</span>';
       echo "<button class='minus' data-id='" . $row['menu_id'] . "'>-</button>";
       echo "</div>";
       echo "</div>";
@@ -57,25 +79,13 @@ include 'mysql.php';
     ?>
   </section>
 
-  <!--Form Pemesanan-->
-
-  <section class="form-section">
-    <h2>Form Pemesanan</h2>
-    <form id="orderForm">
-      <input type="text" id="nama" placeholder="Nama Pemesan" required>
-      <input type="text" id="alamat" placeholder="Alamat Pengiriman" required>
-      <input type="text" id="nohp" placeholder="Nomor HP" required>
-      <p>Total: Rp0</p>
-      <button type="submit">Kirim Pesanan</button>
-    </form>
-  </section>
-
   <!--Footer-->
 
   <footer class="font">
     <p> © Copyright by kelompok 5 2025</p>
   </footer>
 
+  <script src="cart.js"></script>
 
 </body>
 
