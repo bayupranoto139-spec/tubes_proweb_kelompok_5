@@ -14,53 +14,7 @@ document.addEventListener("click", function(e) {
         let current = parseInt(qtyElement.innerText);
         if (current > 0) qtyElement.innerText = current - 1;
     }
-
-    else if (e.target.classList.contains("order")) {
-        let id = e.target.getAttribute("data-id");
-        let qtyElement = document.getElementById("qty-" + id);
-        let jumlah = parseInt(qtyElement.innerText);
-
-        if (jumlah < 1) {
-            alert("Jumlah belum diisi!");
-            return;
-        }
-
-        let form = new FormData();
-        form.append("menu_id", id);
-        form.append("jumlah", jumlah);
-
-        fetch("addCart.php", {
-            method: "POST",
-            body: form
-        })
-        .then(r=> r.text())
-        .then(alert);
-    }
 });
-
-// CART PANEL
-
-// buka cart ketika icon diklik
-document.getElementById("cart-toggle").addEventListener("click", function() {
-    document.getElementById("cart-panel").style.display = "block";
-    loadCart(); // load isi cart via AJAX
-});
-
-// tutup cart ketika tombol X diklik
-document.getElementById("close-cart").addEventListener("click", function() {
-    document.getElementById("cart-panel").style.display = "none";
-});
-
-
-// LOAD CART AJAX
-function loadCart() {
-    fetch("cart_data.php")
-        .then(r => r.text())
-        .then(html => {
-            document.getElementById("cart-container").innerHTML = html;
-        });
-}
-
 
 // BUTTON PESAN (AJAX cart)
 document.addEventListener("click", function(e) {
@@ -90,6 +44,30 @@ document.addEventListener("click", function(e) {
         });
     }
 });
+
+// CART PANEL
+
+// buka cart ketika icon diklik
+document.getElementById("cart-toggle").addEventListener("click", function() {
+    document.getElementById("cart-panel").style.display = "block";
+    loadCart(); // load isi cart via AJAX
+});
+
+// tutup cart ketika tombol X diklik
+document.getElementById("close-cart").addEventListener("click", function() {
+    document.getElementById("cart-panel").style.display = "none";
+});
+
+
+// LOAD CART AJAX
+function loadCart() {
+    fetch("cart_data.php")
+        .then(r => r.text())
+        .then(html => {
+            document.getElementById("cart-container").innerHTML = html;
+            updateTotalLive();
+        });
+}
 
 // buka cart
 document.getElementById("cart-toggle").addEventListener("click", function() {
@@ -166,4 +144,23 @@ function updateTotalLive() {
 
     document.getElementById("cart-total").innerText =
         "Rp " + total.toLocaleString("id-ID");
+}
+
+function checkoutNow() {
+    let form = new FormData();
+
+    fetch("checkout.php", {
+        method: "POST",
+    })
+    .then(r => r.text())
+    .then(res => {
+        // tampilkan pesan sukses
+        alert("Checkout berhasil!");
+
+        // kosongkan cart setelah checkout
+        loadCart();
+    })
+    .catch(err => {
+        alert("Checkout gagal!");
+    });
 }

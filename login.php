@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // pakai prepared statement
-    $stmt = $mysql->prepare("SELECT user_id, username, password FROM users WHERE username = ? LIMIT 1");
+    $stmt = $mysql->prepare("SELECT user_id, username, password, role FROM users WHERE username = ? LIMIT 1");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -22,10 +22,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // contoh sederhana: password disimpan polos di database
         // (untuk production sebaiknya gunakan password_hash dan password_verify)
         if ($password === $row["password"]) {
-            $_SESSION["user_id"]  = $row["id"];
+            $_SESSION["user_id"] = $row["user_id"];
             $_SESSION["username"] = $row["username"];
+            $_SESSION["role"] = $row["role"];
 
-            header("Location: home.php");
+
+            if ($row["role"] === "admin") {
+                header("Location: contact.php");
+            } else {
+                header("Location: home.php");
+            }
             exit;
         }
     }

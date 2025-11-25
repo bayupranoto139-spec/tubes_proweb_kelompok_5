@@ -6,8 +6,12 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
     die("Keranjang kosong!");
 }
 
-// Sementara: user_id = 1
-$user_id = 1;
+if (!isset($_SESSION['user_id'])) {
+    die("Anda harus login sebelum checkout.");
+}
+
+$user_id = $_SESSION['user_id'];
+
 
 // Buat order baru
 $mysql->query("INSERT INTO orders (user_id, total_harga) VALUES ($user_id, 0)");
@@ -38,5 +42,6 @@ $mysql->query("
 // Hapus keranjang
 unset($_SESSION['cart']);
 
-echo "Order berhasil diproses!";
+echo "<script>alert('Checkout berhasil!');window.location.href='food.php';</script>";
+
 ?>
