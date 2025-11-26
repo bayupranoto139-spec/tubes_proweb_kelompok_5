@@ -10,7 +10,7 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tambah Menu</title>
+    <title>☕17 COFFEE - Admin</title>
     <link rel="stylesheet" href="admin.css">
 </head>
 
