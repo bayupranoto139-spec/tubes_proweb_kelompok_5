@@ -103,6 +103,7 @@ h2 {
     border: none;
     margin-top: 5px;
     font-size: 15px;
+    box-sizing: border-box;
 }
 
 /* ===== TEXTAREA ===== */
