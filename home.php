@@ -88,6 +88,12 @@ session_start();
   </footer>
 
   <script src="cart.js"></script>
+  <script>
+document.getElementById("navToggle").onclick = function () {
+    document.getElementById("navLinks").classList.toggle("show-nav");
+};
+</script>
+
 
 </body>
 

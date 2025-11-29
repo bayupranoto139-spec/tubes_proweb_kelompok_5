@@ -35,11 +35,14 @@ if (isset($_POST['submit'])) {
         </div>
     </header>
 
-    <nav>
+    <nav id="main-nav">
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <div class="nav-links" id="navLinks">
         <a href="home.php">Home</a>
         <a href="drink.php">Drink</a>
         <a href="food.php">Food</a>
         <a href="contact.php">Contact</a>
+    </div>
     </nav>
 
     <!-- TAMBAHKAN NOTIFIKASI DI SINI -->
@@ -90,5 +93,12 @@ if (isset($_POST['submit'])) {
         <p>© Copyright by kelompok 5 2025</p>
     </footer>
     <script src="contact.js"></script>
+    <script src="cart.js"></script>
+    <script>
+document.getElementById("navToggle").onclick = function () {
+    document.getElementById("navLinks").classList.toggle("show-nav");
+};
+</script>
+
 </body>
 </html>
