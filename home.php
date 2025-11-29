@@ -16,6 +16,7 @@ session_start();
 </head>
 
 <body>
+  <div id="notif-area"></div>
 
   <!--Navigasi-->
 
@@ -87,7 +88,7 @@ session_start();
     <p> © Copyright by kelompok 5 2025</p>
   </footer>
 
-  <script src="cart.js"></script>
+  <script src="cart.js?v=<?= time() ?>"></script>
   <script>
 document.getElementById("navToggle").onclick = function () {
     document.getElementById("navLinks").classList.toggle("show-nav");

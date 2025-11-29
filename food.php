@@ -16,6 +16,7 @@ session_start();
 </head>
 
 <body>
+  <div id="notif-area"></div>
 
   <!--Navigasi-->
 
@@ -60,8 +61,8 @@ session_start();
     $result = mysqli_query($mysql, $query);
 
     if (mysqli_num_rows($result) == 0) {
-    echo "<p class='no-result'>Menu tidak ditemukan.</p>";
-}
+      echo "<p class='no-result'>Menu tidak ditemukan.</p>";
+    }
 
 
     while ($row = mysqli_fetch_assoc($result)) {
@@ -88,12 +89,12 @@ session_start();
     <p> © Copyright by kelompok 5 2025</p>
   </footer>
 
-  <script src="cart.js"></script>
+  <script src="cart.js?v=<?= time() ?>"></script>
   <script>
-document.getElementById("navToggle").onclick = function () {
-    document.getElementById("navLinks").classList.toggle("show-nav");
-};
-</script>
+    document.getElementById("navToggle").onclick = function () {
+      document.getElementById("navLinks").classList.toggle("show-nav");
+    };
+  </script>
 
 </body>
 

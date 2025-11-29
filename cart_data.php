@@ -35,5 +35,5 @@ foreach ($_SESSION['cart'] as $menu_id => $jumlah) {
 }
 
 echo "<h2>Total: Rp " . number_format($total, 0, ',', '.') . "</h2>";
-echo "<a href='checkout.php'><button>Checkout</button></a>";
+echo '<button class="checkout-btn" onclick="checkoutNow()">Checkout</button>';
 ?>

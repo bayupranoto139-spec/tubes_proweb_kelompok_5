@@ -25,7 +25,7 @@ document.addEventListener("click", function(e) {
         let jumlah = parseInt(qtyElement.innerText);
 
         if (jumlah < 1) {
-            alert("Jumlah belum dipilih!");
+            showNotification("Jumlah belum dipilih", "error");
             return;
         }
 
@@ -40,10 +40,26 @@ document.addEventListener("click", function(e) {
         .then(r => r.text())
         .then(() => {
             qtyElement.innerText = 0;
-            alert("Item masuk keranjang!");
+            showNotification("Item telah masuk keranjang", "success");
         });
     }
 });
+
+function showNotification(message, type = "success") {
+    let notifArea = document.getElementById("notif-area");
+
+    let div = document.createElement("div");
+    div.className = "notification " + type;
+    div.textContent = message;
+
+    notifArea.appendChild(div);
+
+    setTimeout(() => {
+        div.style.opacity = "0";
+        setTimeout(() => div.remove(), 500);
+    }, 2000);
+}
+
 
 // CART PANEL
 
@@ -155,12 +171,12 @@ function checkoutNow() {
     .then(r => r.text())
     .then(res => {
         // tampilkan pesan sukses
-        alert("Checkout berhasil!");
+        showNotification("Checkout berhasil", "success");
 
         // kosongkan cart setelah checkout
         loadCart();
     })
     .catch(err => {
-        alert("Checkout gagal!");
+        showNotification("Checkout gagal", "error");
     });
 }

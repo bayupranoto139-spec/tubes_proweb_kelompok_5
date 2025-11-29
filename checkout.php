@@ -42,6 +42,6 @@ $mysql->query("
 // Hapus keranjang
 unset($_SESSION['cart']);
 
-echo "<script>alert('Checkout berhasil!');window.location.href='food.php';</script>";
+echo "OK";
 
 ?>

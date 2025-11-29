@@ -452,6 +452,10 @@ tbody {
     }
 }
 .notification {
+  position: fixed;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
   max-width: 600px;
   margin: 20px auto;
   padding: 12px 20px;
@@ -461,6 +465,7 @@ tbody {
   animation: slideDown 0.5s ease-out;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   font-size: 14px;
+  z-index: 99999;
 }
 
 .notification.success {
@@ -478,11 +483,11 @@ tbody {
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translate(-50%, -50%);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, -50%);
   }
 }
 
