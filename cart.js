@@ -180,3 +180,19 @@ function checkoutNow() {
         showNotification("Checkout gagal", "error");
     });
 }
+
+//Confirm hapus item admin
+function confirmDelete(id) {
+
+    let box = document.getElementById("confirm-mini");
+
+    box.innerHTML = `
+        <div class="notification" style="z-index:100000;">
+            Yakin ingin menghapus menu ini?<br><br>
+            <button onclick="window.location='adminDelete.php?id=${id}'">Ya</button>
+            <button onclick="document.getElementById('confirm-mini').style.display='none'">Tidak</button>
+        </div>
+    `;
+
+    box.style.display = "block";
+}

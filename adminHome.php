@@ -16,6 +16,9 @@ session_start();
 </head>
 
 <body>
+    <div id="notif-area"></div>
+    <div id="confirm-mini" style="display:none;"></div>
+
 
     <header>
         <img src="foto/kafe.jpg" alt="Header Image" class="header-img">
@@ -55,14 +58,9 @@ session_start();
             echo "<h2>" . $row['nama_menu'] . " - Rp" . number_format($row['harga'], 0, ',', '.') . "</h2>";
             echo "<p>" . $row['deskripsi'] . "</p><br><br>";
             echo "<div class='btn-group'>";
-            echo "<a href='adminDelete.php?id=" . $row['menu_id'] . "' 
-            class='delete-btn' 
-            onclick=\"return confirm('Yakin ingin menghapus menu ini?')\">
-            Hapus
-            </a>";
+            echo '<button type="button" class="delete-btn" onclick="confirmDelete(' . $row['menu_id'] . ')">Hapus</button>';
             echo "</div>";
             echo "</div>";
-
         }
         ?>
     </section>

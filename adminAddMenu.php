@@ -18,6 +18,7 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
 </head>
 
 <body>
+    <div id="notif-area"></div>
 
     <header>
         <img src="foto/kafe.jpg" alt="Header Image" class="header-img">
@@ -65,12 +66,19 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
 
     </div>
 
-  <script src="cart.js?v=<?= time() ?>"></script>
-  <script>
-document.getElementById("navToggle").onclick = function () {
-    document.getElementById("navLinks").classList.toggle("show-nav");
-};
-</script>
+    <script src="cart.js?v=<?= time() ?>"></script>
+    <script>
+        document.getElementById("navToggle").onclick = function () {
+            document.getElementById("navLinks").classList.toggle("show-nav");
+        };
+    </script>
+    <?php if (isset($_GET['status']) && $_GET['status'] == 'success'): ?>
+        <script>
+            showNotification("Menu berhasil ditambahkan!", "success");
+        </script>
+    <?php endif; ?>
+
+
 </body>
 
 </html>

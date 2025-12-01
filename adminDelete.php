@@ -21,8 +21,4 @@ if ($foto && file_exists("foto/" . $foto["foto"])) {
 // hapus menu dari database
 $mysql->query("DELETE FROM menu WHERE menu_id = $id");
 
-// kembali ke halaman admin
-echo "<script>
-        alert('Menu berhasil dihapus');
-        window.location = 'adminHome.php';
-      </script>";
+echo "Ok";
