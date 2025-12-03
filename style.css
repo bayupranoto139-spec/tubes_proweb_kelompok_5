@@ -331,6 +331,23 @@ body {
     background: #c7a76c;
 }
 
+.delete-btn {
+    max-width: 100px;
+    width: 100%;
+    padding: 8px;
+    background: #eac784;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #c7a76c;
+}
+
 /* ===== NOTIFICATION ===== */
 #notif-area {
     position: fixed;
@@ -355,6 +372,232 @@ body {
 
 .notification.error {
     border-color: #ff4444;
+}
+/* ================================
+   POPUP KONFIRMASI DELETE (ANIMASI)
+   ================================ */
+#confirm-mini {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200000;
+}
+
+/* Background hitam transparan */
+.confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    transition: 0.2s ease;
+}
+
+.confirm-overlay.show {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+/* Popup box */
+.confirm-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #6f4e37;
+    transform: translate(-50%, -40%) scale(0.9);
+    opacity: 0;
+    transition: 0.25s ease;
+}
+
+.confirm-popup.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.confirm-popup h3 {
+    margin: 0 0 10px;
+    color: #6f4e37;
+}
+
+.confirm-popup p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* Tombol */
+.confirm-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.yes-btn {
+    background: #6f4e37;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: #ccc;
+    color: black;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.yes-btn:hover {
+    background: #533b2a;
+}
+
+.cancel-btn:hover {
+    background: #b3b3b3;
+}
+
+#AdminAddForm {
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* FORM LABEL */
+#AdminAddForm label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #4e342e;
+}
+
+/* INPUT & TEXTAREA */
+#AdminAddForm input[type="text"],
+#AdminAddForm input[type="number"],
+#AdminAddForm input[type="file"],
+#AdminAddForm select,
+#AdminAddForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #b69984;
+    background: #fff;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: black;
+}
+
+#AdminAddForm textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* BUTTON SUBMIT */
+#AdminAddForm button {
+    width: 100%;
+    margin-top: 25px;
+    background: #6f4e37;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#AdminAddForm button:hover {
+    background: #4b2e21;
+    transform: translateY(-2px);
+}
+
+#tampilan {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1100px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.93);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    border-radius: 12px;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* TABLE HEADER */
+#tampilan thead {
+    background: #4e342e;
+}
+
+#tampilan th {
+    padding: 15px 18px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border-bottom: 3px solid #795548;
+}
+
+/* TABLE BODY */
+#tampilan td {
+    padding: 14px 18px;
+    color: #3e2723;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(121, 85, 72, 0.2);
+}
+
+/* ROW STYLING */
+#tampilan tr:nth-child(even) {
+    background: rgba(250, 243, 240, 0.9);
+}
+
+#tampilan tr:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+#tampilan tr:hover {
+    background: rgba(121, 85, 72, 0.15);
+    transition: 0.2s;
+}
+
+/* make column “Pesan” wrap nicely */
+#tampilan td:last-child {
+    max-width: 300px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    #tampilan {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    #tampilan th,
+    #tampilan td {
+        padding: 10px 12px;
+    }
+
+    /* Hide ID column for mobile */
+    #tampilan th:first-child,
+    #tampilan td:first-child {
+        display: none;
+    }
 }
 
 @keyframes fadeInUp {

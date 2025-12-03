@@ -16,23 +16,26 @@ $result = mysqli_query($mysql, $query);
 </head>
 
 <body>
-    <header>
-        <img src="foto/kafe.jpg" alt="Header Image" class="header-img">
-        <div class="header-text">
-            <h1>17 COFFEE</h1>
-            <p>Choose Your Favourite Menu!</p>
-        </div>
-    </header>
+<nav class="lux-nav">
+    <h2>17 COFFEE</h2>
 
-    <nav id="main-nav">
-        <button class="nav-toggle" id="navToggle">☰</button>
-        <div class="nav-links" id="navLinks">
-            <a href="adminHome.php">Home</a>
-            <a href="adminAddMenu.php">Add Menu</a>
-            <a href="isi_pesan.php">Feedback</a>
-        </div>
-    </nav>
-    <h2 class="font">Contact Us</h2>
+    <div class="nav-right">
+        <a href="adminHome.php">🏠</a>
+        <a href="adminAddMenu.php">🍽️</a>
+        <a href="isi_pesan.php">✉️</a>
+    </div>
+</nav>
+
+    <!-- HERO -->
+<div class="hero-header">
+    <img src="foto/kafe.jpg" class="hero-img">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-text">
+        <h1>Makanan Favorit</h1>
+        <p>Pilih menu makanan terbaik untuk temani harimu ✨</p>
+    </div>
+</div>
 
     <!--Form Kontak-->
     <table id="tampilan">
