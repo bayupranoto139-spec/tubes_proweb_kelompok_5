@@ -11,6 +11,7 @@ if (!isset($_SESSION["username"])) {
   <meta charset="UTF-8">
   <title>Beranda Kedai Kopi</title>
   <link rel="stylesheet" href="styleLogin.css">
+  <link rel="icon" type="image/png" href="foto/ico.png">
 </head>
 <body style="background: radial-gradient(circle at top, #f6e1c3, #3b2f2f);">
   <div class="container">

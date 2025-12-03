@@ -3,6 +3,7 @@
     <div class="header-text">
       <h1>17 COFFEE</h1>
       <p>Choose Your Favourite Menu!</p>
+      <link rel="icon" type="image/png" href="foto/ico.png">
     </div>
 </header>
 

@@ -14,6 +14,7 @@ session_start();
 
     <link rel="stylesheet" href="newStyle.css?v=<?= time() ?>">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="foto/ico.png">
 
 </head>
 

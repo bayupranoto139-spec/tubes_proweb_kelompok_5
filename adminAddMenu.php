@@ -13,8 +13,9 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☕17 COFFEE - Admin</title>
+    <title>17 COFFEE - Admin</title>
     <link rel="stylesheet" href="style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">
+    <link rel="icon" type="image/png" href="foto/ico.png">
 </head>
 
 <body>

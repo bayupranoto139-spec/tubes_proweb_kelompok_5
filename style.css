@@ -580,8 +580,9 @@ body {
 }
 
 #tampilan th {
+    background-color: #543932;
     padding: 15px 18px;
-    color: white;
+    color: white;;
     font-size: 17px;
     font-weight: bold;
     border-bottom: 3px solid #795548;
@@ -602,11 +603,6 @@ body {
 
 #tampilan tr:nth-child(odd) {
     background: rgba(255, 255, 255, 0.9);
-}
-
-#tampilan tr:hover {
-    background: rgba(121, 85, 72, 0.15);
-    transition: 0.2s;
 }
 
 /* make column “Pesan” wrap nicely */
