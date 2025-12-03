@@ -20,28 +20,20 @@ session_start();
     <div id="notif-area"></div>
     <div id="confirm-mini" style="display:none;"></div>
 
-
-<nav class="lux-nav">
-    <h2>17 COFFEE - Admin</h2>
-
-    <div class="nav-right">
-        <a href="adminHome.php">🏠</a>
-        <a href="adminAddMenu.php">🍽️</a>
-        <a href="isi_pesan.php">✉️</a>
-        <a href="proses_pesanan.php">🧾</a>
-    </div>
-</nav>
+    <?php
+    include 'navbar.php';
+    ?>
 
     <!-- HERO -->
-<div class="hero-header">
-    <img src="foto/kafe.jpg" class="hero-img">
-    <div class="hero-overlay"></div>
+    <div class="hero-header">
+        <img src="foto/kafe.jpg" class="hero-img">
+        <div class="hero-overlay"></div>
 
-    <div class="hero-text">
-        <h1>Makanan Favorit</h1>
-        <p>Pilih menu makanan terbaik untuk temani harimu ✨</p>
+        <div class="hero-text">
+            <h1>Admin Page</h1>
+            <p>Kelola Semua Menu ✨</p>
+        </div>
     </div>
-</div>
 
 
 
@@ -57,22 +49,22 @@ session_start();
         $result = mysqli_query($mysql, $query);
 
         while ($row = mysqli_fetch_assoc($result)) {
-?>
-    <div class="menu-card" id="menu-<?= $row['menu_id'] ?>">
-        <img src="foto/<?= $row['foto'] ?>" class="menu-img">
+            ?>
+            <div class="menu-card" id="menu-<?= $row['menu_id'] ?>">
+                <img src="foto/<?= $row['foto'] ?>" class="menu-img">
 
-        <h3><?= $row['nama_menu'] ?></h3>
-        <p class="menu-price">Rp <?= number_format($row['harga'], 0, ',', '.') ?></p>
+                <h3><?= $row['nama_menu'] ?></h3>
+                <p class="menu-price">Rp <?= number_format($row['harga'], 0, ',', '.') ?></p>
 
-        <p class="menu-desc"><?= $row['deskripsi'] ?></p>
+                <p class="menu-desc"><?= $row['deskripsi'] ?></p>
 
-        <div class="menu-action">
-            
-            <button type="button" class="delete-btn" onclick="confirmDelete(<?= $row['menu_id'] ?>)">Hapus</button>
+                <div class="menu-action">
 
-        </div>
-    </div>
-<?php } ?>
+                    <button type="button" class="delete-btn" onclick="confirmDelete(<?= $row['menu_id'] ?>)">Hapus</button>
+
+                </div>
+            </div>
+        <?php } ?>
     </section>
 
 
@@ -82,14 +74,14 @@ session_start();
         <p> © Copyright by kelompok 5 2025</p>
     </footer>
 
-  <script src="cart.js?v=<?= time() ?>"></script>
-<script>
-function confirmDelete(id) {
+    <script src="cart.js?v=<?= time() ?>"></script>
+    <script>
+        function confirmDelete(id) {
 
-    let box = document.getElementById("confirm-mini");
+            let box = document.getElementById("confirm-mini");
 
-    // TAMPILKAN POPUP KONFIRMASI
-    box.innerHTML = `
+            // TAMPILKAN POPUP KONFIRMASI
+            box.innerHTML = `
         <div class="confirm-overlay"></div>
 
         <div class="confirm-popup">
@@ -103,51 +95,51 @@ function confirmDelete(id) {
         </div>
     `;
 
-    box.style.display = "block";
+            box.style.display = "block";
 
-    setTimeout(() => {
-        document.querySelector(".confirm-popup").classList.add("show");
-        document.querySelector(".confirm-overlay").classList.add("show");
-    }, 10);
-}
+            setTimeout(() => {
+                document.querySelector(".confirm-popup").classList.add("show");
+                document.querySelector(".confirm-overlay").classList.add("show");
+            }, 10);
+        }
 
-function closeConfirm() {
-    document.querySelector(".confirm-popup").classList.remove("show");
-    document.querySelector(".confirm-overlay").classList.remove("show");
+        function closeConfirm() {
+            document.querySelector(".confirm-popup").classList.remove("show");
+            document.querySelector(".confirm-overlay").classList.remove("show");
 
-    setTimeout(() => {
-        document.getElementById("confirm-mini").style.display = "none";
-    }, 200);
-}
+            setTimeout(() => {
+                document.getElementById("confirm-mini").style.display = "none";
+            }, 200);
+        }
 
-// ==========================
-//  DELETE AJAX TANPA PINDAH PAGE
-// ==========================
-function deleteNow(id) {
+        // ==========================
+        //  DELETE AJAX TANPA PINDAH PAGE
+        // ==========================
+        function deleteNow(id) {
 
-    fetch("adminDelete.php?id=" + id)
-        .then(res => res.text())
-        .then(res => {
+            fetch("adminDelete.php?id=" + id)
+                .then(res => res.text())
+                .then(res => {
 
-            closeConfirm(); // tutup popup
+                    closeConfirm(); // tutup popup
 
-            if (res.trim() === "Ok") {
+                    if (res.trim() === "Ok") {
 
-                showNotification("Menu berhasil dihapus!", "success");
+                        showNotification("Menu berhasil dihapus!", "success");
 
-                // HAPUS CARD DARI HALAMAN
-                let card = document.getElementById("menu-" + id);
-                if (card) card.remove();
+                        // HAPUS CARD DARI HALAMAN
+                        let card = document.getElementById("menu-" + id);
+                        if (card) card.remove();
 
-            } else {
-                showNotification("Gagal menghapus menu!", "error");
-            }
-        })
-        .catch(err => {
-            showNotification("Terjadi kesalahan!", "error");
-        });
-}
-</script>
+                    } else {
+                        showNotification("Gagal menghapus menu!", "error");
+                    }
+                })
+                .catch(err => {
+                    showNotification("Terjadi kesalahan!", "error");
+                });
+        }
+    </script>
 
 
 

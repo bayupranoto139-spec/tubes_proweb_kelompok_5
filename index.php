@@ -1,18 +1,20 @@
 <?php
 session_start();
 if (!isset($_SESSION["username"])) {
-    header("Location: index.html");
-    exit;
+  header("Location: index.html");
+  exit;
 }
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <title>Beranda Kedai Kopi</title>
   <link rel="stylesheet" href="styleLogin.css">
   <link rel="icon" type="image/png" href="foto/ico.png">
 </head>
+
 <body style="background: radial-gradient(circle at top, #f6e1c3, #3b2f2f);">
   <div class="container">
     <div class="header">
@@ -32,4 +34,5 @@ if (!isset($_SESSION["username"])) {
     </div>
   </div>
 </body>
+
 </html>

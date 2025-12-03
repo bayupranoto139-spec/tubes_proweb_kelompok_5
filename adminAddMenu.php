@@ -21,27 +21,19 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
 <body>
     <div id="notif-area"></div>
 
-<nav class="lux-nav">
-    <h2>17 COFFEE - Admin</h2>
+    <?php
+    include 'navbar.php';
+    ?>
 
-    <div class="nav-right">
-        <a href="adminHome.php">🏠</a>
-        <a href="adminAddMenu.php">🍽️</a>
-        <a href="isi_pesan.php">✉️</a>
-        <a href="proses_pesanan.php">🧾</a>
+    <div class="hero-header">
+        <img src="foto/kafe.jpg" class="hero-img">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-text">
+            <h1>Admin Page</h1>
+            <p>Tambahkan Menu Terbaik Lainnya ✨</p>
+        </div>
     </div>
-</nav>
-
-
-<div class="hero-header">
-    <img src="foto/kafe.jpg" class="hero-img">
-    <div class="hero-overlay"></div>
-
-    <div class="hero-text">
-        <h1>Makanan Favorit</h1>
-        <p>Pilih menu makanan terbaik untuk temani harimu ✨</p>
-    </div>
-</div>
 
     <div id="AdminAddForm">
 

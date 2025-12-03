@@ -1,15 +1,15 @@
 //button + -
-document.addEventListener("click", function(e) {
+document.addEventListener("click", function (e) {
     if (e.target.classList.contains("plus")) {
         let id = e.target.getAttribute("data-id");
-        let qtyElement = document.getElementById("qty-"+id);
+        let qtyElement = document.getElementById("qty-" + id);
 
         qtyElement.innerText = parseInt(qtyElement.innerText) + 1;
     }
 
     else if (e.target.classList.contains("minus")) {
         let id = e.target.getAttribute("data-id");
-        let qtyElement = document.getElementById("qty-"+id);
+        let qtyElement = document.getElementById("qty-" + id);
 
         let current = parseInt(qtyElement.innerText);
         if (current > 0) qtyElement.innerText = current - 1;
@@ -17,7 +17,7 @@ document.addEventListener("click", function(e) {
 });
 
 // BUTTON PESAN (AJAX cart)
-document.addEventListener("click", function(e) {
+document.addEventListener("click", function (e) {
     if (e.target.classList.contains("order")) {
 
         let id = e.target.getAttribute("data-id");
@@ -37,11 +37,11 @@ document.addEventListener("click", function(e) {
             method: "POST",
             body: form
         })
-        .then(r => r.text())
-        .then(() => {
-            qtyElement.innerText = 0;
-            showNotification("Item telah masuk keranjang", "success");
-        });
+            .then(r => r.text())
+            .then(() => {
+                qtyElement.innerText = 0;
+                showNotification("Item telah masuk keranjang", "success");
+            });
     }
 });
 
@@ -64,13 +64,13 @@ function showNotification(message, type = "success") {
 // CART PANEL
 
 // buka cart ketika icon diklik
-document.getElementById("cart-toggle").addEventListener("click", function() {
+document.getElementById("cart-toggle").addEventListener("click", function () {
     document.getElementById("cart-panel").style.display = "block";
     loadCart(); // load isi cart via AJAX
 });
 
 // tutup cart ketika tombol X diklik
-document.getElementById("close-cart").addEventListener("click", function() {
+document.getElementById("close-cart").addEventListener("click", function () {
     document.getElementById("cart-panel").style.display = "none";
 });
 
@@ -86,20 +86,20 @@ function loadCart() {
 }
 
 // buka cart
-document.getElementById("cart-toggle").addEventListener("click", function() {
+document.getElementById("cart-toggle").addEventListener("click", function () {
     let panel = document.getElementById("cart-panel");
     panel.classList.add("active");
     loadCart();
 });
 
 // tutup cart
-document.getElementById("close-cart").addEventListener("click", function() {
+document.getElementById("close-cart").addEventListener("click", function () {
     document.getElementById("cart-panel").classList.remove("active");
 });
 
 
 // CART ACTION BUTTONS
-document.addEventListener("click", function(e) {
+document.addEventListener("click", function (e) {
 
     // + tombol dalam cart panel
     if (e.target.classList.contains("cart-plus")) {
@@ -113,8 +113,8 @@ document.addEventListener("click", function(e) {
             method: "POST",
             body: form
         })
-        .then(r => r.text())
-        .then(loadCart);
+            .then(r => r.text())
+            .then(loadCart);
     }
 
     // - tombol dalam cart panel
@@ -129,8 +129,8 @@ document.addEventListener("click", function(e) {
             method: "POST",
             body: form
         })
-        .then(r => r.text())
-        .then(loadCart);
+            .then(r => r.text())
+            .then(loadCart);
     }
 
     // hapus item
@@ -145,8 +145,8 @@ document.addEventListener("click", function(e) {
             method: "POST",
             body: form
         })
-        .then(r => r.text())
-        .then(loadCart);
+            .then(r => r.text())
+            .then(loadCart);
     }
 });
 
@@ -168,17 +168,17 @@ function checkoutNow() {
     fetch("checkout.php", {
         method: "POST",
     })
-    .then(r => r.text())
-    .then(res => {
-        // tampilkan pesan sukses
-        showNotification("Checkout berhasil", "success");
+        .then(r => r.text())
+        .then(res => {
+            // tampilkan pesan sukses
+            showNotification("Checkout berhasil", "success");
 
-        // kosongkan cart setelah checkout
-        loadCart();
-    })
-    .catch(err => {
-        showNotification("Checkout gagal", "error");
-    });
+            // kosongkan cart setelah checkout
+            loadCart();
+        })
+        .catch(err => {
+            showNotification("Checkout gagal", "error");
+        });
 }
 
 //Confirm hapus item admin
@@ -196,8 +196,17 @@ function confirmDelete(id) {
 
     box.style.display = "block";
 }
-function hapusPesanan(id) {
-    if (confirm("Yakin ingin menghapus pesanan ini?")) {
-        window.location.href = "hapus_pesan.php?id=" + id;
-    }
+function confirmDeleteOrder(id) {
+
+    let box = document.getElementById("confirm-mini");
+
+    box.innerHTML = `
+        <div class="notification" style="z-index:100000;">
+            Yakin ingin menghapus pesanan ini?<br><br>
+            <button onclick="window.location='hapus_pesan.php?id=${id}'">Ya</button>
+            <button onclick="document.getElementById('confirm-mini').style.display='none'">Tidak</button>
+        </div>
+    `;
+
+    box.style.display = "block";
 }

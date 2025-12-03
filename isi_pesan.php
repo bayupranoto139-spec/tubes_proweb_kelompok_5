@@ -17,27 +17,21 @@ $result = mysqli_query($mysql, $query);
 </head>
 
 <body>
-<nav class="lux-nav">
-    <h2>17 COFFEE - Admin</h2>
 
-    <div class="nav-right">
-        <a href="adminHome.php">🏠</a>
-        <a href="adminAddMenu.php">🍽️</a>
-        <a href="isi_pesan.php">✉️</a>
-        <a href="proses_pesanan.php">🧾</a>
-    </div>
-</nav>
+    <?php
+    include 'navbar.php';
+    ?>
 
     <!-- HERO -->
-<div class="hero-header">
-    <img src="foto/kafe.jpg" class="hero-img">
-    <div class="hero-overlay"></div>
+    <div class="hero-header">
+        <img src="foto/kafe.jpg" class="hero-img">
+        <div class="hero-overlay"></div>
 
-    <div class="hero-text">
-        <h1>Makanan Favorit</h1>
-        <p>Pilih menu makanan terbaik untuk temani harimu ✨</p>
+        <div class="hero-text">
+            <h1>Makanan Favorit</h1>
+            <p>Pilih menu makanan terbaik untuk temani harimu ✨</p>
+        </div>
     </div>
-</div>
 
     <!--Form Kontak-->
     <table id="tampilan">
@@ -63,21 +57,16 @@ $result = mysqli_query($mysql, $query);
         </tbody>
     </table>
 
+    <?php
+    include 'footer.php';
+    ?>
 
-    <!--Footer-->
-
-    <footer class="font">
-        <p> © Copyright by kelompok 5 2025</p>
-    </footer>
-
-    </footer>
-
-  <script src="cart.js?v=<?= time() ?>"></script>
-  <script>
-document.getElementById("navToggle").onclick = function () {
-    document.getElementById("navLinks").classList.toggle("show-nav");
-};
-</script>
+    <script src="cart.js?v=<?= time() ?>"></script>
+    <script>
+        document.getElementById("navToggle").onclick = function () {
+            document.getElementById("navLinks").classList.toggle("show-nav");
+        };
+    </script>
 </body>
 
 </html>

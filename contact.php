@@ -20,6 +20,7 @@ if (isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,18 +28,12 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">
     <link rel="icon" type="image/png" href="foto/ico.png">
 </head>
+
 <body>
 
-<nav class="lux-nav">
-    <h2>17 COFFEE</h2>
-
-    <div class="nav-right">
-        <a href="home.php">🏠</a>
-        <a href="food.php">🍽️</a>
-        <a href="drink.php">🥤</a>
-        <a href="contact.php">✉️</a>
-    </div>
-</nav>
+    <?php
+    include 'navbar.php';
+    ?>
 
     <!-- TAMBAHKAN NOTIFIKASI DI SINI -->
     <?php if (isset($success)): ?>
@@ -54,14 +49,14 @@ if (isset($_POST['submit'])) {
     <?php endif; ?>
 
     <div class="hero-header">
-    <img src="foto/kafe.jpg" class="hero-img">
-    <div class="hero-overlay"></div>
+        <img src="foto/kafe.jpg" class="hero-img">
+        <div class="hero-overlay"></div>
 
-    <div class="hero-text">
-        <h1>Contact Us</h1>
-        <p>Berikan masukan kepada kami ✨</p>
+        <div class="hero-text">
+            <h1>Contact Us</h1>
+            <p>Berikan masukan kepada kami ✨</p>
+        </div>
     </div>
-</div>
 
     <form action="" method="POST" id="ContactForm">
         <div>
@@ -83,22 +78,18 @@ if (isset($_POST['submit'])) {
         <button class="contact-btn" type="submit" name="submit">Kirim</button>
     </form>
 
-    <footer>
-        <p>Kamu bisa menghubungi kami melalui:</p>
-        📍Alamat: Jl. Pikopi No.222
-        <br>
-        📷Instagram: @kopkop.17
-        <br>
-        📞No. HP: 086543210987
-        <p>© Copyright by kelompok 5 2025</p>
-    </footer>
+    <?php
+    include 'footer.php';
+    ?>
+
     <script src="contact.js"></script>
     <script src="cart.js"></script>
     <script>
-document.getElementById("navToggle").onclick = function () {
-    document.getElementById("navLinks").classList.toggle("show-nav");
-};
-</script>
+        document.getElementById("navToggle").onclick = function () {
+            document.getElementById("navLinks").classList.toggle("show-nav");
+        };
+    </script>
 
 </body>
+
 </html>

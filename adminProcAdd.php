@@ -23,7 +23,7 @@ $query = "INSERT INTO menu (nama_menu, harga, deskripsi, kategori, foto)
           VALUES ('$nama_menu', '$harga', '$deskripsi', '$kategori', '$foto')";
 
 if ($mysql->query($query)) {
-   echo "<script>window.location='adminAddMenu.php?status=success';</script>";
-exit;
+    echo "<script>window.location='adminAddMenu.php?status=success';</script>";
+    exit;
 }
 ?>

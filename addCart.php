@@ -6,7 +6,7 @@ if (!isset($_SESSION['cart'])) {
 }
 
 $menu_id = $_POST['menu_id'];
-$jumlah  = $_POST['jumlah'];
+$jumlah = $_POST['jumlah'];
 
 // Tambah atau update jumlah
 if (isset($_SESSION['cart'][$menu_id])) {

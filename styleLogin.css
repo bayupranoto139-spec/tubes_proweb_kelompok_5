@@ -31,7 +31,7 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 70%);
   filter: blur(2px);
   top: -40px;
   right: -10px;
@@ -62,7 +62,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
   position: relative;
 }
 
@@ -187,19 +187,19 @@ body {
   letter-spacing: 0.03em;
   font-size: 0.9rem;
   cursor: pointer;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
 }
 
 .btn-login:hover {
   transform: translateY(-1px);
-  box-shadow: 0 13px 26px rgba(0,0,0,0.6);
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.6);
   filter: brightness(1.04);
 }
 
 .btn-login:active {
   transform: translateY(0);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
   filter: brightness(0.96);
 }
 
@@ -232,6 +232,7 @@ body {
     font-size: 1.15rem;
   }
 }
+
 .toggle-pass {
   position: absolute;
   right: 12px;

@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body {
@@ -24,10 +24,10 @@ body {
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(14px);
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 18px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
     z-index: 9999;
 }
 
@@ -42,13 +42,14 @@ body {
     text-decoration: none;
     font-size: 14px;
     color: white;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     padding: 8px 12px;
     border-radius: 10px;
     transition: .25s;
 }
+
 .lux-nav a:hover {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     color: #eac784;
 }
 
@@ -76,9 +77,11 @@ body {
     color: black;
     background: white;
     border-left: 3px solid black;
-    padding: 0; /* penting! */
-    overflow: hidden; /* penting! */
-    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    padding: 0;
+    /* penting! */
+    overflow: hidden;
+    /* penting! */
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     z-index: 99999 !important;
     transition: right 0.3s ease;
 }
@@ -166,13 +169,14 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
 }
 
 .hero-text {
     position: absolute;
     text-align: center;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -197,8 +201,8 @@ body {
 }
 
 .menu-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 18px;
@@ -208,7 +212,7 @@ body {
 
 .menu-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .menu-img {
@@ -268,6 +272,7 @@ body {
     font-weight: bold;
     transition: .25s;
 }
+
 .order:hover {
     background: #c7a76c;
 }
@@ -288,10 +293,10 @@ body {
 
 .contact-card {
     width: 450px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     padding: 25px;
     border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(12px);
     text-align: center;
 }
@@ -300,9 +305,10 @@ body {
     color: #eac784;
     margin-bottom: 15px;
 }
-#ContactForm{
-  width: 400px;
-  margin: 10px auto;
+
+#ContactForm {
+    width: 400px;
+    margin: 10px auto;
 }
 
 #ContactForm input,
@@ -327,6 +333,7 @@ body {
     cursor: pointer;
     transition: .25s;
 }
+
 .contact-btn:hover {
     background: #c7a76c;
 }
@@ -373,6 +380,7 @@ body {
 .notification.error {
     border-color: #ff4444;
 }
+
 /* ================================
    POPUP KONFIRMASI DELETE (ANIMASI)
    ================================ */
@@ -473,7 +481,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     padding: 25px 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -533,33 +541,37 @@ body {
     max-width: 1100px;
     border-collapse: collapse;
     background: rgba(255, 255, 255, 0.93);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     overflow: hidden;
     animation: fadeIn 0.5s ease-in-out;
 }
- /* tambahan style biar halaman sukses rapi */
+
+/* tambahan style biar halaman sukses rapi */
 .success-box {
     margin: 120px auto;
     max-width: 480px;
     padding: 30px 35px;
     text-align: center;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(8px);
     border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.22);
-    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
     color: white;
 }
+
 .success-box h2 {
     color: #eac784;
     margin-bottom: 12px;
     font-size: 30px;
 }
+
 .success-box p {
     font-size: 16px;
     margin-bottom: 25px;
 }
+
 .btn-kembali {
     display: inline-block;
     text-decoration: none;
@@ -570,6 +582,7 @@ body {
     border-radius: 8px;
     transition: .25s;
 }
+
 .btn-kembali:hover {
     background: #c7a76c;
 }
@@ -582,7 +595,8 @@ body {
 #tampilan th {
     background-color: #543932;
     padding: 15px 18px;
-    color: white;;
+    color: white;
+    ;
     font-size: 17px;
     font-weight: bold;
     border-bottom: 3px solid #795548;
@@ -632,10 +646,22 @@ body {
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translate(-50%, -30px); }
-    to   { opacity: 1; transform: translate(-50%, 0); }
+    from {
+        opacity: 0;
+        transform: translate(-50%, -30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
-footer{
+footer {
     text-align: center;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-top: 50px;
+    font-size: 14px;
+    opacity: 0.7;
 }
