@@ -15,14 +15,13 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>17 COFFEE - Admin</title>
     <link rel="stylesheet" href="style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">
-    <link rel="icon" type="image/png" href="foto/ico.png">
 </head>
 
 <body>
     <div id="notif-area"></div>
 
     <?php
-    include 'navbar.php';
+    include 'navbarAdmin.php';
     ?>
 
     <div class="hero-header">

@@ -21,7 +21,7 @@ session_start();
     <div id="confirm-mini" style="display:none;"></div>
 
     <?php
-    include 'navbar.php';
+    include 'navbarAdmin.php';
     ?>
 
     <!-- HERO -->

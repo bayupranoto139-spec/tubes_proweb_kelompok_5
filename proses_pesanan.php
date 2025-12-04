@@ -32,7 +32,7 @@ $orders = mysqli_query($mysql, $sqlOrders);
     <div id="confirm-mini" style="display:none;"></div>
 
     <?php
-    include 'navbar.php';
+    include 'navbarAdmin.php';
     ?>
 
     <div class="hero-header">

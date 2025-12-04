@@ -31,22 +31,11 @@ if (isset($_POST['submit'])) {
 
 <body>
 
+    <div id="notif-area"></div>
+
     <?php
     include 'navbar.php';
     ?>
-
-    <!-- TAMBAHKAN NOTIFIKASI DI SINI -->
-    <?php if (isset($success)): ?>
-        <div class="notification success">
-            ✓ <?= $success ?>
-        </div>
-    <?php endif; ?>
-
-    <?php if (isset($error)): ?>
-        <div class="notification error">
-            ✗ <?= $error ?>
-        </div>
-    <?php endif; ?>
 
     <div class="hero-header">
         <img src="foto/kafe.jpg" class="hero-img">
@@ -82,13 +71,18 @@ if (isset($_POST['submit'])) {
     include 'footer.php';
     ?>
 
-    <script src="contact.js"></script>
+    <!-- <script src="contact.js"></script> -->
     <script src="cart.js"></script>
     <script>
         document.getElementById("navToggle").onclick = function () {
             document.getElementById("navLinks").classList.toggle("show-nav");
         };
     </script>
+    <?php if (isset($_GET['status']) && $_GET['status'] == 'success'): ?>
+        <script>
+            showNotification("Pesan terkirim!", "success");
+        </script>
+    <?php endif; ?>
 
 </body>
 

@@ -19,7 +19,7 @@ $result = mysqli_query($mysql, $query);
 <body>
 
     <?php
-    include 'navbar.php';
+    include 'navbarAdmin.php';
     ?>
 
     <!-- HERO -->
