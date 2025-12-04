@@ -20,31 +20,31 @@ session_start();
     <div id="notif-area"></div>
     <div id="confirm-mini" style="display:none;"></div>
 
-<nav class="lux-nav">
-  <h2>17 COFFEE</h2>
+    <nav class="lux-nav">
+        <h2>17 COFFEE</h2>
 
-  <div class="nav-right">
-      <a href="adminHome.php">🏠</a>
-      <a href="adminAddMenu.php">🍽️</a>
-      <a href="isi_pesan.php">✉️</a>
-      <a href="proses_pesanan.php">🧾</a>
-    </div>
-    
-      <div class="search-container">
-          <form method="GET" action="">
-              <input type="text" name="search" placeholder="Cari menu..."
-                     value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
-              <button type="submit">✧⌕</button>
-          </form>
-      </div>
+        <div class="nav-right">
+            <a href="adminHome.php">🏠</a>
+            <a href="adminAddMenu.php">🍽️</a>
+            <a href="isi_pesan.php">✉️</a>
+            <a href="proses_pesanan.php">🧾</a>
+        </div>
 
-</nav>
+        <div class="search-container">
+            <form method="GET" action="">
+                <input type="text" name="search" placeholder="Cari menu..."
+                    value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
+                <button type="submit">✧⌕</button>
+            </form>
+        </div>
 
-<!-- Hamburger (DI BAWAH NAVBAR, KANAN) -->
-<div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
 
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu">
+    <!-- Hamburger (DI BAWAH NAVBAR, KANAN) -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
         <a href="adminHome.php">🏠</a>
         <a href="adminAddMenu.php">🍽️</a>
         <a href="isi_pesan.php">✉️</a>
@@ -69,12 +69,17 @@ session_start();
 
     <section class="menu-grid">
         <?php
-        // Ambil data menu dari database
         $search = isset($_GET['search']) ? $_GET['search'] : '';
 
-        $query = "SELECT * FROM menu";
+        $query = ($search !== "")
+            ? "SELECT * FROM menu WHERE nama_menu LIKE '%$search%'"
+            : "SELECT * FROM menu";
 
         $result = mysqli_query($mysql, $query);
+
+        if (mysqli_num_rows($result) == 0) {
+            echo "<p class='no-result'>Menu tidak ditemukan</p>";
+        }
 
         while ($row = mysqli_fetch_assoc($result)) {
             ?>
@@ -98,9 +103,9 @@ session_start();
 
     <!--Footer-->
 
-<?php
-include'footer.php';
-?>
+    <?php
+    include 'footer.php';
+    ?>
 
     <script src="cart.js?v=<?= time() ?>"></script>
     <script>
