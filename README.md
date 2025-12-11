@@ -160,11 +160,16 @@ Dipanggil dari `cart.js`.
 
 ### ✨ Keamanan
 
-* Password saat ini masih disimpan plain text
+* Password saat ini disimpan plain text → **disarankan pakai hashing**
+
+  ```php
+  password_hash() + password_verify()
+  ```
 
 ### 🧹 Cleanup
 
 * Validasi input user (SQL Injection)
+* Prepared statement bisa ditambahkan ke semua query
 
 ---
 
