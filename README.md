@@ -172,7 +172,7 @@ Dipanggil dari `cart.js`.
 
 ---
 
-## 🧑‍💻 Kontribusi
+## 🧑‍💻 Kontributor
 
 1. Bayu Pranoto (251402066) (Ketua)
 2. Jona Vebrian Gultom (251402085) 
